@@ -1,70 +1,73 @@
-# Getting Started with Create React App
+# 🌐 Mi Portafolio - Darikson Anyosa
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+🚀 Portafolio profesional como desarrollador frontend y backend enfocado en soluciones digitales elegantes, funcionales e intuitivas. Este proyecto refleja mi enfoque en diseño UI/UX, rendimiento y desarrollo moderno con soporte multilenguaje.
 
-## Available Scripts
+## 📸 Capturas de pantalla
 
-In the project directory, you can run:
+### Modo Claro
+![Home Light](./screenshots/home-light.png)
+![Experience Light](./screenshots/experience-light.png)
 
-### `npm start`
+### Modo Oscuro
+![Home Dark](./screenshots/home-dark.png)
+![Experience Dark](./screenshots/experience-dark.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🧰 Tecnologías Utilizadas
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- React
+- Styled-Components
+- React Router
+- Framer Motion
+- Context API (para multilenguaje)
+- Formspree (formulario de contacto)
+- React Icons
 
-### `npm test`
+## 🌍 Funcionalidades
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- ✅ Multilenguaje: Español 🇪🇸 e Inglés 🇺🇸
+- ✅ Modo Oscuro / Claro
+- ✅ Navegación con React Router
+- ✅ Proyectos, habilidades y experiencia
+- ✅ Formulario de contacto funcional
+- ✅ Responsive Design
 
-### `npm run build`
+## 🛠 Instalación
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+git clone https://github.com/tuusuario/mi-portafolio.git
+cd mi-portafolio
+npm install
+npm start
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🌐 Deploy a GitHub Pages
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+npm install gh-pages --save-dev
+```
 
-### `npm run eject`
+En `package.json`:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```json
+"homepage": "https://tuusuario.github.io/mi-portafolio",
+"scripts": {
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d build"
+}
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Luego ejecuta:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+npm run deploy
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 📬 Contacto
 
-## Learn More
+- Email: dariksoma@gmail.com
+- LinkedIn: [linkedin.com/in/darikson](https://linkedin.com/)
+- GitHub: [github.com/darikson](https://github.com/)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 📄 Licencia
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Este proyecto es de uso personal. Puedes inspirarte para crear el tuyo, pero no lo redistribuyas como propio.
