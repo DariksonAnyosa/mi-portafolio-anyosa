@@ -5,12 +5,12 @@
 ## 📸 Capturas de pantalla
 
 ### Modo Claro
-![Home Light](./screenshots/home-light.png)
-![Experience Light](./screenshots/experience-light.png)
+![Home Light](./public/assets/image/screenshots/home-light.png)
+![Experience Light](./public/assets/image/screenshots/experience-light.png)
 
 ### Modo Oscuro
-![Home Dark](./screenshots/home-dark.png)
-![Experience Dark](./screenshots/experience-dark.png)
+![Home Dark](./public/assets/image/screenshots/home-dark.png)
+![Experience Dark](./public/assets/image/screenshots/experience-dark.png)
 
 ## 🧰 Tecnologías Utilizadas
 
