@@ -34,7 +34,7 @@
 ## 🛠 Instalación
 
 ```bash
-git clone https://github.com/tuusuario/mi-portafolio.git
+git clone https://github.com/tuusuario/mi-portafolio.git](https://github.com/DariksonAnyosa/mi-portafolio-anyosa
 cd mi-portafolio
 npm install
 npm start
