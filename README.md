@@ -34,7 +34,7 @@
 ## 🛠 Instalación
 
 ```bash
-git clone https://github.com/tuusuario/mi-portafolio.git](https://github.com/DariksonAnyosa/mi-portafolio-anyosa
+git clone https://github.com/DariksonAnyosa/mi-portafolio-anyosasa
 cd mi-portafolio
 npm install
 npm start
@@ -49,7 +49,7 @@ npm install gh-pages --save-dev
 En `package.json`:
 
 ```json
-"homepage": "https://tuusuario.github.io/mi-portafolio",
+"homepage": "https://github.com/DariksonAnyosa/mi-portafolio-anyosa",
 "scripts": {
   "predeploy": "npm run build",
   "deploy": "gh-pages -d build"
@@ -70,4 +70,4 @@ npm run deploy
 
 ## 📄 Licencia
 
-Este proyecto es de uso personal. Puedes inspirarte para crear el tuyo, pero no lo redistribuyas como propio.
+Este proyecto es de uso personal. Puedes inspirarte para crear el tuyo, pero no lo redistribuyas como propio gracias.
