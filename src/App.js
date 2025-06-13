@@ -1,4 +1,3 @@
-// src/App.js
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import styled from 'styled-components';
@@ -17,7 +16,7 @@ import Skills from './pages/Skills';
 import Experience from './pages/Experience';
 import Contact from './pages/Contact';
 
-function App() {
+const App = () => {
   return (
     <ThemeProvider>
       <LanguageProvider>
@@ -40,7 +39,7 @@ function App() {
       </LanguageProvider>
     </ThemeProvider>
   );
-}
+};
 
 const AppContainer = styled.div`
   display: flex;
@@ -50,7 +49,6 @@ const AppContainer = styled.div`
 
 const MainContent = styled.main`
   flex: 1;
-  padding-top: 80px; /* Espacio para el navbar fijo */
 `;
 
 export default App;

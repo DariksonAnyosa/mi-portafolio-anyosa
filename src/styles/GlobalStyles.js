@@ -1,181 +1,352 @@
-// src/styles/GlobalStyles.js
+// src/styles/GlobalStyles.js - UX 2025 Refactor
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
+  /* Importar fuentes modernas */
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap');
+  
+  /* Importar fuente local como fallback */
+  @font-face {
+    font-family: 'Courier';
+    src: url('/assets/fonts/Courier-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
   :root {
-    /* Variables de tema claro (default) */
-    --bg-primary: #f9f9f9;
-    --bg-secondary: #ffffff;
-    --text-primary: #333333;
-    --text-secondary: #666666;
-    --accent-color: #b8860b; /* Dorado elegante */
-    --accent-light: #d4af37; /* Dorado más claro */
-    --accent-dark: #8b6914; /* Dorado más oscuro */
-    --card-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
-    --border-color: rgba(0, 0, 0, 0.05);
-    --hover-color: rgba(184, 134, 11, 0.05);
+    /* Design System 2025 - Brand Colors */
+    --brand: #C89A00;
+    --brand-light: #F0C54E;
+    --brand-soft: rgba(200, 154, 0, 0.15);
+    
+    /* Surfaces - Light Theme */
+    --surface-0: #FFFFFF;
+    --surface-1: #F5F5F7;
+    --surface-2: #EEEEEF;
+    
+    /* Text - Light Theme */
+    --text-hi: #111827;
+    --text-mid: #4B5563;
+    --text-low: #6B7280;
+    
+    /* Semantic Colors */
+    --success: #059669;
+    --warning: #D97706;
+    --error: #DC2626;
+    
+    /* Shadows & Effects */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --shadow-brand: 0 4px 14px 0 rgba(200, 154, 0, 0.15);
+    
+    /* Blur & Backdrop */
+    --blur-sm: blur(8px);
+    --blur-md: blur(16px);
+    
+    /* Typography Scale */
+    --font-primary: 'Inter', 'IBM Plex Mono', 'Courier', system-ui, sans-serif;
+    --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+    
+    /* Fluid Typography */
+    --text-xs: clamp(0.75rem, 0.8vw, 0.875rem);
+    --text-sm: clamp(0.875rem, 0.9vw, 1rem);
+    --text-base: clamp(1rem, 1.1vw, 1.125rem);
+    --text-lg: clamp(1.125rem, 1.3vw, 1.25rem);
+    --text-xl: clamp(1.25rem, 1.5vw, 1.5rem);
+    --text-2xl: clamp(1.5rem, 3.2vw, 2.25rem);
+    --text-3xl: clamp(2.2rem, 5vw, 3.5rem);
+    
+    /* Spacing Scale */
+    --space-xs: clamp(0.5rem, 1vw, 0.75rem);
+    --space-sm: clamp(0.75rem, 1.5vw, 1rem);
+    --space-md: clamp(1rem, 2vw, 1.5rem);
+    --space-lg: clamp(1.5rem, 3vw, 2rem);
+    --space-xl: clamp(2rem, 4vw, 3rem);
+    --space-2xl: clamp(3rem, 6vw, 5rem);
+    
+    /* Header Height */
+    --header-height: 60px;
+    
+    /* Border Radius */
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+    
+    /* Focus Ring */
+    --focus-ring: 0 0 0 2px var(--brand);
+    --focus-offset: 2px;
   }
 
+  /* Dark Theme */
   [data-theme="dark"] {
-    /* Variables de tema oscuro */
-    --bg-primary: #121212;
-    --bg-secondary: #1e1e1e;
-    --text-primary: #e0e0e0;
-    --text-secondary: #a0a0a0;
-    --accent-color: #d4af37; /* Dorado más claro para tema oscuro */
-    --accent-light: #ebcd68;
-    --accent-dark: #b8860b;
-    --card-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    --border-color: rgba(255, 255, 255, 0.05);
-    --hover-color: rgba(212, 175, 55, 0.08);
+    /* Surfaces - Dark Theme */
+    --surface-0: #0B1120;
+    --surface-1: #1A2331;
+    --surface-2: #293548;
+    
+    /* Text - Dark Theme */
+    --text-hi: #F9FAFB;
+    --text-mid: #D1D5DB;
+    --text-low: #9CA3AF;
+    
+    /* Adjust shadows for dark mode */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
   }
 
-  * {
+  /* Reset & Base Styles */
+  *, *::before, *::after {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    transition: background-color 0.3s, color 0.3s, border 0.3s, box-shadow 0.3s;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--header-height);
   }
 
   body {
-    font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
-    background-color: var(--bg-primary);
-    color: var(--text-primary);
+    font-family: var(--font-primary);
+    font-size: var(--text-base);
     line-height: 1.6;
+    color: var(--text-hi);
+    background-color: var(--surface-0);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
-  a {
-    color: var(--accent-color);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-
-  a:hover {
-    color: var(--accent-light);
-  }
-
-  .container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-
-  button {
-    cursor: pointer;
-    font-family: inherit;
-  }
-
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-
-  /* Estilo para scrollbar */
-  ::-webkit-scrollbar {
-    width: 10px;
-  }
-
-  ::-webkit-scrollbar-track {
-    background: var(--bg-primary);
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background: var(--accent-color);
-    border-radius: 5px;
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    background: var(--accent-dark);
-  }
-
-  /* Estilos para selección de texto */
-  ::selection {
-    background-color: var(--accent-color);
-    color: white;
-  }
-
-  /* Estilos básicos para headings */
+  /* Typography */
   h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
     line-height: 1.2;
-    margin-bottom: 0.5em;
-    color: var(--text-primary);
+    color: var(--text-hi);
+    letter-spacing: -0.025em;
   }
 
-  h1 {
-    font-size: 2.5rem;
-  }
-
-  h2 {
-    font-size: 2rem;
-  }
-
-  h3 {
-    font-size: 1.75rem;
-  }
-
-  h4 {
-    font-size: 1.5rem;
-  }
-
-  h5 {
-    font-size: 1.25rem;
-  }
-
-  h6 {
-    font-size: 1rem;
-  }
+  h1 { font-size: var(--text-3xl); }
+  h2 { font-size: var(--text-2xl); }
+  h3 { font-size: var(--text-xl); }
+  h4 { font-size: var(--text-lg); }
+  h5 { font-size: var(--text-base); }
+  h6 { font-size: var(--text-sm); }
 
   p {
-    margin-bottom: 1rem;
+    color: var(--text-mid);
+    line-height: 1.7;
+    margin-bottom: var(--space-md);
   }
 
-  /* Estilo para inputs y formularios */
+  /* Links */
+  a {
+    color: var(--brand);
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  a:hover {
+    color: var(--brand-light);
+  }
+
+  /* Focus States - Accessibility */
+  button:focus-visible,
+  a:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible {
+    outline: 2px solid var(--brand);
+    outline-offset: var(--focus-offset);
+    border-radius: var(--radius-sm);
+  }
+
+  /* Form Elements */
   input, textarea, select {
     font-family: inherit;
-    font-size: 1rem;
-    padding: 0.5rem;
-    border-radius: 4px;
-    border: 1px solid var(--border-color);
-    background-color: var(--bg-primary);
-    color: var(--text-primary);
-    transition: border-color 0.3s, box-shadow 0.3s;
+    font-size: var(--text-base);
+    color: var(--text-hi);
+    background-color: var(--surface-0);
+    border: 1px solid var(--text-low);
+    border-radius: var(--radius-md);
+    padding: var(--space-sm) var(--space-md);
+    transition: all 0.2s ease;
+    width: 100%;
   }
 
   input:focus, textarea:focus, select:focus {
     outline: none;
-    border-color: var(--accent-color);
-    box-shadow: 0 0 0 2px rgba(184, 134, 11, 0.2);
+    border-color: var(--brand);
+    box-shadow: var(--focus-ring);
   }
 
-  /* Animaciones globales */
+  /* Buttons */
+  button {
+    font-family: inherit;
+    font-size: var(--text-base);
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    border-radius: var(--radius-md);
+    padding: var(--space-sm) var(--space-lg);
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-xs);
+    text-decoration: none;
+    
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+
+  /* Button Variants */
+  .btn-primary {
+    background-color: var(--brand);
+    color: white;
+    box-shadow: var(--shadow-brand);
+    
+    &:hover:not(:disabled) {
+      background-color: var(--brand-light);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-lg);
+    }
+  }
+
+  .btn-secondary {
+    background-color: var(--surface-1);
+    color: var(--text-hi);
+    border: 1px solid var(--text-low);
+    
+    &:hover:not(:disabled) {
+      background-color: var(--surface-2);
+      border-color: var(--brand);
+    }
+  }
+
+  /* Images & Media */
+  img, video {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--radius-md);
+  }
+
+  img[loading="lazy"] {
+    transition: opacity 0.3s ease;
+  }
+
+  /* Scrollbar Styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--surface-1);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--text-low);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--brand);
+  }
+
+  /* Selection */
+  ::selection {
+    background-color: var(--brand-soft);
+    color: var(--text-hi);
+  }
+
+  /* Utilities */
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 var(--space-md);
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  /* Animations */
   @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 
   @keyframes slideUp {
-    from {
-      transform: translateY(20px);
-      opacity: 0;
+    from { transform: translateY(100%); }
+    to { transform: translateY(0); }
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.4s ease-out;
+  }
+
+  /* Reduced Motion */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
     }
-    to {
-      transform: translateY(0);
-      opacity: 1;
+    
+    html {
+      scroll-behavior: auto;
     }
   }
 
-  /* Utilidades */
-  .fade-in {
-    animation: fadeIn 0.5s ease-in-out;
+  /* High Contrast Mode */
+  @media (prefers-contrast: high) {
+    :root {
+      --shadow-sm: none;
+      --shadow-md: none;
+      --shadow-lg: none;
+      --shadow-brand: none;
+    }
   }
 
-  .slide-up {
-    animation: slideUp 0.5s ease-in-out;
+  /* Print Styles */
+  @media print {
+    * {
+      background: transparent !important;
+      color: black !important;
+      box-shadow: none !important;
+    }
+    
+    a, a:visited {
+      text-decoration: underline;
+    }
+    
+    .no-print {
+      display: none !important;
+    }
   }
 `;
 

@@ -108,9 +108,14 @@ const Contact = () => {
 };
 
 const ContactContainer = styled.div`
-  max-width: 1400px;
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: calc(var(--header-height) + 40px) var(--space-lg) 40px;
+  min-height: 100vh;
+  
+  @media (max-width: 768px) {
+    padding: calc(var(--header-height) + 40px) var(--space-md) 40px;
+  }
 `;
 
 const PageTitle = styled.h1`

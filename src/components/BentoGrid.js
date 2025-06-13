@@ -44,12 +44,30 @@ export const BentoGridItem = ({
 // Estilos
 const StyledBentoGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
   width: 100%;
   padding: 20px 0;
-
+  
+  /* Móvil pequeño */
+  grid-template-columns: 1fr;
+  
+  /* Móvil grande */
+  @media (min-width: 480px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  /* Tablet */
   @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  /* Tablet grande */
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  /* Desktop */
+  @media (min-width: 1200px) {
     grid-template-columns: repeat(6, 1fr);
     grid-auto-rows: minmax(100px, auto);
   }
@@ -114,9 +132,49 @@ const StyledBentoItem = styled(motion.div)`
     flex: 1;
   }
 
-  @media (max-width: 768px) {
-    grid-column: span 6 !important;
+  /* Móvil pequeño - todos ocupan toda la fila */
+  @media (max-width: 479px) {
+    grid-column: span 1 !important;
     grid-row: span 1 !important;
+  }
+  
+  /* Móvil grande - ajustar spans */
+  @media (min-width: 480px) and (max-width: 767px) {
+    &[style*="span 1"] {
+      grid-column: span 1 !important;
+    }
+    &[style*="span 2"], &[style*="span 3"], &[style*="span 4"], &[style*="span 5"], &[style*="span 6"] {
+      grid-column: span 2 !important;
+    }
+  }
+  
+  /* Tablet - ajustar spans */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    &[style*="span 1"] {
+      grid-column: span 1 !important;
+    }
+    &[style*="span 2"] {
+      grid-column: span 2 !important;
+    }
+    &[style*="span 3"], &[style*="span 4"], &[style*="span 5"], &[style*="span 6"] {
+      grid-column: span 3 !important;
+    }
+  }
+  
+  /* Tablet grande - ajustar spans */
+  @media (min-width: 1024px) and (max-width: 1199px) {
+    &[style*="span 1"] {
+      grid-column: span 1 !important;
+    }
+    &[style*="span 2"] {
+      grid-column: span 2 !important;
+    }
+    &[style*="span 3"] {
+      grid-column: span 2 !important;
+    }
+    &[style*="span 4"], &[style*="span 5"], &[style*="span 6"] {
+      grid-column: span 4 !important;
+    }
   }
 `;
 
