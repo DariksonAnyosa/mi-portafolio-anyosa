@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { translations } from '../data/translations';
 import { useLanguage } from '../context/LanguageContext';
-import { FaArrowRight, FaGithub, FaLinkedin, FaEnvelope, FaReact, FaNodeJs, FaPython, FaExternalLinkAlt, FaCode, FaBriefcase, FaCalendar, FaBuilding, FaCheckCircle } from 'react-icons/fa';
+import { FaArrowRight, FaGithub, FaLinkedin, FaEnvelope, FaReact, FaNodeJs, FaPython, FaExternalLinkAlt, FaCode, FaBriefcase, FaCalendar, FaBuilding, FaCheckCircle, FaEye } from 'react-icons/fa';
 import { getFeaturedProjects } from '../data/projects';
 import { experience } from '../data/experience';
 
@@ -38,6 +38,16 @@ const Home = () => {
             <SecondaryButton to="/contacto" className="btn-secondary">
               {t.contact[language]}
             </SecondaryButton>
+            <CodeButton 
+              href="https://github.com/DariksonAnyosa/mi-portafolio-anyosa" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="btn-code"
+              aria-label={language === 'es' ? 'Ver código del portafolio' : 'View portfolio code'}
+            >
+              <FaCode />
+              {language === 'es' ? 'Ver Código' : 'View Code'}
+            </CodeButton>
           </HeroActions>
           
           <SocialLinks>
@@ -64,6 +74,16 @@ const Home = () => {
               <FaEnvelope />
             </SocialLink>
           </SocialLinks>
+          
+          <OpenSourceNote>
+            <FaCode size={14} />
+            <span>
+              {language === 'es' 
+                ? 'Este portafolio es open source' 
+                : 'This portfolio is open source'
+              }
+            </span>
+          </OpenSourceNote>
         </HeroContent>
       </HeroSection>
 
@@ -415,6 +435,19 @@ const HeroActions = styled.div`
   justify-content: center;
   gap: var(--space-md);
   margin-bottom: var(--space-xl);
+  
+  @media (max-width: 640px) {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-sm);
+    
+    /* En móvil, hacer que los botones tengan el mismo ancho */
+    > * {
+      width: 100%;
+      max-width: 280px;
+      justify-content: center;
+    }
+  }
 `;
 
 const PrimaryButton = styled(Link)`
@@ -458,6 +491,53 @@ const SecondaryButton = styled(Link)`
   }
 `;
 
+const CodeButton = styled.a`
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-md) var(--space-lg);
+  border-radius: var(--radius-md);
+  font-weight: 500;
+  text-decoration: none;
+  background-color: var(--surface-0);
+  color: var(--text-hi);
+  border: 2px solid var(--brand);
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+  
+  /* Efecto de relleno en hover */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, var(--brand), transparent);
+    transition: left 0.5s ease;
+  }
+  
+  &:hover {
+    transform: translateY(-2px);
+    background-color: var(--brand);
+    color: white;
+    box-shadow: var(--shadow-brand);
+    
+    &::before {
+      left: 100%;
+    }
+  }
+  
+  svg {
+    transition: transform 0.2s ease;
+  }
+  
+  &:hover svg {
+    transform: scale(1.1);
+  }
+`;
+
 const SocialLinks = styled.div`
   display: flex;
   justify-content: center;
@@ -480,6 +560,26 @@ const SocialLink = styled.a`
     background-color: var(--brand-soft);
     color: var(--brand);
     transform: translateY(-2px);
+  }
+`;
+
+const OpenSourceNote = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  margin-top: var(--space-md);
+  font-size: var(--text-sm);
+  color: var(--text-low);
+  font-weight: 500;
+  opacity: 0.8;
+  
+  svg {
+    color: var(--brand);
+  }
+  
+  @media (max-width: 640px) {
+    font-size: var(--text-xs);
   }
 `;
 
