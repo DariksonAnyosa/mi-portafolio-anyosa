@@ -1,9 +1,7 @@
 # 🌟 Portfolio de Darikson
 
 > Portfolio personal moderno desarrollado con React - Desarrollador de experiencias digitales
-
-![Portfolio Preview](https://via.placeholder.com/800x400/C89A00/FFFFFF?text=Darikson+Portfolio)
-
+> 
 ## ✨ Características
 
 - 🎨 **Diseño Moderno**: UI/UX 2025 con animaciones fluidas
@@ -15,7 +13,7 @@
 
 ## 🚀 Demo
 
-**Demo en vivo:** [portfolio-darikson.vercel.app](https://portfolio-darikson.vercel.app)
+**Demo en vivo:** [https://mi-portafolio-anyosa.vercel.app](https://mi-portafolio-anyosa.vercel.app/)
 
 ## 🛠️ Tecnologías
 
@@ -165,7 +163,7 @@ Este proyecto está bajo la Licencia MIT. Ver `LICENSE` para más detalles.
 ## 👨‍💻 Autor
 
 **Darikson Anyosa**
-- Portfolio: [portfolio-darikson.vercel.app](https://portfolio-darikson.vercel.app)
+- Portfolio: [portfolio-darikson.vercel.app](https://mi-portafolio-anyosa.vercel.app/)
 - LinkedIn: [@dariksonanyosa](https://linkedin.com/in/dariksonanyosa)
 - GitHub: [@DariksonAnyosa](https://github.com/DariksonAnyosa)
 - Email: dariksoma@gmail.com
