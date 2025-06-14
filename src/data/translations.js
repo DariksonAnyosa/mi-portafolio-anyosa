@@ -90,6 +90,10 @@ export const translations = {
       es: 'Mis Proyectos',
       en: 'My Projects'
     },
+    subtitle: {
+      es: 'Explora mi colección de proyectos elegantes y funcionales',
+      en: 'Explore my collection of elegant and functional projects'
+    },
     description: {
       es: 'Explora mi colección de proyectos elegantes y funcionales',
       en: 'Explore my collection of elegant and functional projects'
@@ -114,9 +118,61 @@ export const translations = {
       es: 'Fullstack',
       en: 'Fullstack'
     },
+    frontend: {
+      es: 'Frontend',
+      en: 'Frontend'
+    },
+    backend: {
+      es: 'Backend',
+      en: 'Backend'
+    },
     viewProject: {
       es: 'Ver proyecto',
       en: 'View project'
+    },
+    viewDemo: {
+      es: 'Ver Demo',
+      en: 'View Demo'
+    },
+    viewCode: {
+      es: 'Ver Código',
+      en: 'View Code'
+    },
+    code: {
+      es: 'Código',
+      en: 'Code'
+    },
+    demo: {
+      es: 'Demo',
+      en: 'Demo'
+    },
+    projects: {
+      es: 'Proyectos',
+      en: 'Projects'
+    },
+    completed: {
+      es: 'Completados',
+      en: 'Completed'
+    },
+    inProgress: {
+      es: 'En Desarrollo',
+      en: 'In Progress'
+    },
+    maintenance: {
+      es: 'Mantenimiento',
+      en: 'Maintenance'
+    },
+    noProjects: {
+      es: 'No hay proyectos en esta categoría',
+      en: 'No projects in this category'
+    },
+    noProjectsDescription: {
+      es: 'Prueba seleccionando otra categoría o mira todos los proyectos',
+      en: 'Try selecting another category or view all projects'
+    },
+    viewAll: {
+      es: 'Ver Todos',
+      en: 'View All'
     }
   },
   

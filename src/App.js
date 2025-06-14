@@ -6,8 +6,7 @@ import { LanguageProvider } from './context/LanguageContext';
 import GlobalStyles from './styles/GlobalStyles';
 
 // Componentes
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
+import { Navbar, Footer } from './components';
 
 // Páginas
 import Home from './pages/Home';

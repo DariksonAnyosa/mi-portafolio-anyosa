@@ -1,9 +1,8 @@
-// src/components/LanguageToggle.js (mejorado)
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import { useLanguage } from '../context/LanguageContext';
-import { translations } from '../data/translations';
+import { useLanguage } from '../../context/LanguageContext';
+import { translations } from '../../data/translations';
 
 const LanguageToggle = () => {
   const { language, toggleLanguage } = useLanguage();

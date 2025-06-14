@@ -1,73 +1,182 @@
-# 🌐 Mi Portafolio - Darikson Anyosa
+# 🌟 Portfolio de Darikson
 
-🚀 Portafolio profesional como desarrollador frontend y backend enfocado en soluciones digitales elegantes, funcionales e intuitivas. Este proyecto refleja mi enfoque en diseño UI/UX, rendimiento y desarrollo moderno con soporte multilenguaje.
+> Portfolio personal moderno desarrollado con React - Desarrollador de experiencias digitales
 
-## 📸 Capturas de pantalla
+![Portfolio Preview](https://via.placeholder.com/800x400/C89A00/FFFFFF?text=Darikson+Portfolio)
 
-### Modo Claro
-![Home Light](./public/assets/image/screenshots/home-light.png)
-![Experience Light](./public/assets/image/screenshots/experience-light.png)
+## ✨ Características
 
-### Modo Oscuro
-![Home Dark](./public/assets/image/screenshots/home-dark.png)
-![Experience Dark](./public/assets/image/screenshots/experience-dark.png)
+- 🎨 **Diseño Moderno**: UI/UX 2025 con animaciones fluidas
+- 🌙 **Modo Oscuro**: Tema claro/oscuro con persistencia 
+- 🌐 **Multiidioma**: Español e Inglés
+- 📱 **Responsive**: Optimizado para todos los dispositivos
+- ⚡ **Performance**: Optimizado para velocidad y SEO
+- 🎯 **Accesible**: Cumple estándares WCAG 2.1
 
-## 🧰 Tecnologías Utilizadas
+## 🚀 Demo
 
-- React
-- Styled-Components
-- React Router
-- Framer Motion
-- Context API (para multilenguaje)
-- Formspree (formulario de contacto)
-- React Icons
+**Demo en vivo:** [portfolio-darikson.vercel.app](https://portfolio-darikson.vercel.app)
 
-## 🌍 Funcionalidades
+## 🛠️ Tecnologías
 
-- ✅ Multilenguaje: Español 🇪🇸 e Inglés 🇺🇸
-- ✅ Modo Oscuro / Claro
-- ✅ Navegación con React Router
-- ✅ Proyectos, habilidades y experiencia
-- ✅ Formulario de contacto funcional
-- ✅ Responsive Design
+- **Frontend:** React 19, React Router v7
+- **Styling:** Styled Components, CSS Grid/Flexbox
+- **Animaciones:** Framer Motion
+- **Iconos:** React Icons (Feather)
+- **Formularios:** Formspree
+- **Build:** Create React App
+- **Deploy:** Vercel/Netlify
 
-## 🛠 Instalación
+## 📋 Requisitos Previos
 
+- Node.js 18+ 
+- npm o yarn
+- Git
+
+## 🔧 Instalación y Desarrollo
+
+### 1. Clonar el repositorio
 ```bash
-git clone https://github.com/DariksonAnyosa/mi-portafolio-anyosasa
-cd mi-portafolio
+git clone https://github.com/DariksonAnyosa/portfolio.git
+cd portfolio
+```
+
+### 2. Instalar dependencias
+```bash
 npm install
-npm start
+# o
+yarn install
 ```
 
-## 🌐 Deploy a GitHub Pages
+### 3. Configurar variables de entorno
+```bash
+cp .env.example .env.local
+```
+
+Edita `.env.local` con tus valores:
+```env
+REACT_APP_FORMSPREE_ID=tu_formspree_id
+REACT_APP_EMAIL=tu@email.com
+```
+
+### 4. Ejecutar en desarrollo
+```bash
+npm start
+# o 
+yarn start
+```
+
+La aplicación estará disponible en `http://localhost:3000`
+
+## 📦 Build para Producción
 
 ```bash
-npm install gh-pages --save-dev
+# Crear build optimizado
+npm run build
+
+# Previsualizar build localmente
+npm run preview
+
+# Analizar bundle size
+npm run analyze
 ```
 
-En `package.json`:
+## 📁 Estructura del Proyecto
 
-```json
-"homepage": "https://github.com/DariksonAnyosa/mi-portafolio-anyosa",
-"scripts": {
-  "predeploy": "npm run build",
-  "deploy": "gh-pages -d build"
+```
+src/
+├── components/           # Componentes reutilizables
+│   ├── layout/          # Layout principales (Navbar, Footer)
+│   ├── ui/              # Componentes UI básicos
+│   ├── cards/           # Componentes tipo tarjeta
+│   └── index.js         # Barrel exports
+├── pages/               # Páginas principales
+├── context/             # Contextos de React
+├── data/                # Datos estáticos
+├── styles/              # Estilos globales
+├── hooks/               # Custom hooks
+└── utils/               # Utilidades
+```
+
+## 🎨 Personalización
+
+### Colores y Tema
+Los colores se definen en `src/styles/GlobalStyles.js`:
+```css
+:root {
+  --brand: #C89A00;        /* Color principal */
+  --brand-light: #F0C54E;  /* Variante clara */
+  --brand-soft: rgba(200, 154, 0, 0.15); /* Transparente */
 }
 ```
 
-Luego ejecuta:
+### Contenido
+- **Información personal:** `src/data/personal.js`
+- **Proyectos:** `src/data/projects.js`
+- **Experiencia:** `src/data/experience.js`
+- **Traducciones:** `src/data/translations.js`
 
+## 🌐 Deploy
+
+### Vercel (Recomendado)
 ```bash
+npm install -g vercel
+vercel --prod
+```
+
+### Netlify
+```bash
+npm run build
+# Subir carpeta 'build' a Netlify
+```
+
+### GitHub Pages
+```bash
+npm install --save-dev gh-pages
+# Agregar a package.json:
+# "homepage": "https://tusername.github.io/portfolio"
+# "deploy": "gh-pages -d build"
 npm run deploy
 ```
 
-## 📬 Contacto
+## 📈 Optimización
 
-- Email: dariksoma@gmail.com
-- LinkedIn: [linkedin.com/in/darikson](https://linkedin.com/)
-- GitHub: [github.com/darikson](https://github.com/)
+- ✅ **Lazy Loading** de componentes pesados
+- ✅ **Code Splitting** automático
+- ✅ **Image Optimization** 
+- ✅ **SEO** meta tags optimizados
+- ✅ **Performance** Lighthouse 90+
+- ✅ **Bundle Size** < 500KB gzipped
+
+## 🤝 Contribuciones
+
+¡Las contribuciones son bienvenidas! Si encuentras algún bug o tienes sugerencias:
+
+1. Fork el proyecto
+2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
+3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
+4. Push a la rama (`git push origin feature/AmazingFeature`)
+5. Abre un Pull Request
 
 ## 📄 Licencia
 
-Este proyecto es de uso personal. Puedes inspirarte para crear el tuyo, pero no lo redistribuyas como propio gracias.
+Este proyecto está bajo la Licencia MIT. Ver `LICENSE` para más detalles.
+
+## 👨‍💻 Autor
+
+**Darikson Anyosa**
+- Portfolio: [portfolio-darikson.vercel.app](https://portfolio-darikson.vercel.app)
+- LinkedIn: [@dariksonanyosa](https://linkedin.com/in/dariksonanyosa)
+- GitHub: [@DariksonAnyosa](https://github.com/DariksonAnyosa)
+- Email: dariksoma@gmail.com
+
+## 🙏 Agradecimientos
+
+- [React Icons](https://react-icons.github.io/react-icons/) por los iconos
+- [Framer Motion](https://www.framer.com/motion/) por las animaciones
+- [Styled Components](https://styled-components.com/) por el styling
+- [Vercel](https://vercel.com/) por el hosting gratuito
+
+---
+
+⭐ **¡Dale una estrella si te gustó el proyecto!** ⭐

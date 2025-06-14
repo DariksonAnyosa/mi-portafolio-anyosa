@@ -3,11 +3,11 @@ import React, { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { Link, useLocation } from 'react-router-dom';
 import { FiMenu, FiX, FiSun, FiMoon, FiGlobe } from 'react-icons/fi';
-import { useLanguage } from '../context/LanguageContext';
-import { useTheme } from '../context/ThemeContext';
-import { translations } from '../data/translations';
-import LanguageToggle from './LanguageToggle';
-import ThemeToggle from './ThemeToggle';
+import { useLanguage } from '../../context/LanguageContext';
+import { useTheme } from '../../context/ThemeContext';
+import { translations } from '../../data/translations';
+import LanguageToggle from '../ui/LanguageToggle';
+import ThemeToggle from '../ui/ThemeToggle';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);

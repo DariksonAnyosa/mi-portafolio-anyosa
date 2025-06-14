@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { FiSun, FiMoon } from 'react-icons/fi';
-import { useTheme } from '../context/ThemeContext';
+import { useTheme } from '../../context/ThemeContext';
 
 const ThemeToggle = ({ isMobile }) => {
   const { theme, toggleTheme } = useTheme();

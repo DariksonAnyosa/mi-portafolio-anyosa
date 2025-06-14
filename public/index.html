@@ -1,112 +1,165 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" prefix="og: http://ogp.me/ns#">
 <head>
   <meta charset="utf-8" />
-  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#b8860b" /> <!-- Color dorado elegante -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="theme-color" content="#C89A00" />
   
   <!-- SEO Meta Tags -->
-  <meta name="description" content="Portafolio profesional con proyectos elegantes y de alta calidad. Desarrollador especializado en crear experiencias digitales modernas." />
-  <meta name="keywords" content="portafolio, desarrollo web, diseño, frontend, react, proyectos" />
-  <meta name="author" content="Darikson" />
+  <title>Darikson Anyosa | Desarrollador de Experiencias Digitales</title>
+  <meta name="description" content="Portfolio profesional de Darikson Anyosa. Desarrollador especializado en crear experiencias digitales elegantes y funcionales con React, Node.js y tecnologías modernas." />
+  <meta name="keywords" content="desarrollador web, portfolio, react, node.js, frontend, backend, experiencias digitales, desarrollo web moderno" />
+  <meta name="author" content="Darikson Anyosa" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://portfolio-darikson.vercel.app/" />
   
-  <!-- Open Graph / Facebook Meta Tags -->
+  <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://tudominio.com/" />
-  <meta property="og:title" content="Mi Portafolio | Desarrollador Web" />
-  <meta property="og:description" content="Portafolio profesional con proyectos elegantes y de alta calidad. Desarrollador especializado en crear experiencias digitales modernas." />
+  <meta property="og:site_name" content="Darikson Anyosa Portfolio" />
+  <meta property="og:url" content="https://portfolio-darikson.vercel.app/" />
+  <meta property="og:title" content="Darikson Anyosa | Desarrollador de Experiencias Digitales" />
+  <meta property="og:description" content="Portfolio profesional con proyectos elegantes y funcionales. Especializado en desarrollo web moderno y experiencias digitales." />
   <meta property="og:image" content="%PUBLIC_URL%/og-image.jpg" />
+  <meta property="og:image:alt" content="Portfolio de Darikson Anyosa - Desarrollador Web" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   
-  <!-- Twitter Meta Tags -->
+  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:url" content="https://tudominio.com/" />
-  <meta name="twitter:title" content="Mi Portafolio | Desarrollador Web" />
-  <meta name="twitter:description" content="Portafolio profesional con proyectos elegantes y de alta calidad." />
+  <meta name="twitter:creator" content="@dariksonanyosa" />
+  <meta name="twitter:url" content="https://portfolio-darikson.vercel.app/" />
+  <meta name="twitter:title" content="Darikson Anyosa | Desarrollador de Experiencias Digitales" />
+  <meta name="twitter:description" content="Portfolio profesional con proyectos elegantes y funcionales. Desarrollo web moderno." />
   <meta name="twitter:image" content="%PUBLIC_URL%/og-image.jpg" />
   
-  <!-- Preconexiones para mejorar rendimiento -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+  <!-- Preconexiones para Performance -->
+  <!-- Preload de fuente local -->
+  <link rel="preload" href="%PUBLIC_URL%/assets/fonts/Courier-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
   
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="dns-prefetch" href="https://formspree.io" />
   
-  <!-- Favicon y PWA -->
+  <!-- Iconos y PWA -->
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" sizes="any" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="%PUBLIC_URL%/apple-touch-icon.png" />
   <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
   
-  <!-- Título del sitio -->
-  <title>Mi Portafolio | Desarrollador Web</title>
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Darikson Anyosa",
+    "jobTitle": "Desarrollador de Experiencias Digitales",
+    "description": "Desarrollador especializado en crear experiencias digitales elegantes y funcionales",
+    "url": "https://portfolio-darikson.vercel.app/",
+    "sameAs": [
+      "https://github.com/DariksonAnyosa",
+      "https://linkedin.com/in/dariksonanyosa"
+    ],
+    "knowsAbout": ["React", "Node.js", "JavaScript", "Frontend Development", "Backend Development"],
+    "email": "dariksoma@gmail.com"
+  }
+  </script>
   
-  <!-- Estilos iniciales para evitar parpadeo en carga -->
+  <!-- Estilos críticos inline para evitar FOUC -->
   <style>
-    
     :root {
+      --brand: #C89A00;
+      --surface-0: #FFFFFF;
+      --text-hi: #111827;
       color-scheme: light dark;
     }
-    body {
-      font-family: 'Courier', 'Courier New', monospace;
-      background-color: #f9f9f9;
-      color: #333333;
+    
+    [data-theme="dark"] {
+      --surface-0: #0B1120;
+      --text-hi: #F9FAFB;
+    }
+    
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      letter-spacing: 0.3px;
-      line-height: 1.7;
     }
+    
+    body {
+      font-family: 'Courier', 'Courier New', monospace !important;
+      background-color: var(--surface-0);
+      color: var(--text-hi);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      visibility: visible;
+      opacity: 1;
+    }
+    
+    /* Forzar Courier en todos los elementos */
+    *, *::before, *::after {
+      font-family: 'Courier', 'Courier New', monospace !important;
+    }
+    
     @media (prefers-color-scheme: dark) {
-      body {
-        background-color: #121212;
-        color: #e0e0e0;
+      :root {
+        --surface-0: #0B1120;
+        --text-hi: #F9FAFB;
       }
     }
+    
+    /* Loading spinner */
     .initial-loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 100vh;
-      width: 100%;
+      background-color: var(--surface-0);
+      z-index: 9999;
     }
-    .loader {
-      width: 48px;
-      height: 48px;
-      border: 3px solid #b8860b;
-      border-radius: 50%;
-      display: inline-block;
-      position: relative;
-      box-sizing: border-box;
-      animation: rotation 1s linear infinite;
-    }
-    .loader::after {
-      content: '';  
-      box-sizing: border-box;
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
+    
+    .spinner {
       width: 40px;
       height: 40px;
+      border: 3px solid rgba(200, 154, 0, 0.3);
       border-radius: 50%;
-      border: 3px solid transparent;
-      border-bottom-color: #d4af37;
+      border-top-color: var(--brand);
+      animation: spin 1s ease-in-out infinite;
     }
-    @keyframes rotation {
-      0% {
-        transform: rotate(0deg);
-      }
-      100% {
-        transform: rotate(360deg);
-      }
+    
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    
+    /* Hide loader when React loads */
+    #root:not(:empty) + .initial-loader {
+      display: none;
     }
   </style>
 </head>
 <body>
-  <noscript>Necesitas activar JavaScript para ver este sitio.</noscript>
-  <div id="root">
-    <div class="initial-loader">
-      <span class="loader"></span>
+  <!-- JavaScript optimizado -->
+  <script>
+    // Detectar tema preferido del sistema
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  </script>
+  <noscript>
+    <div style="text-align: center; padding: 50px; font-family: sans-serif;">
+      <h1>JavaScript Requerido</h1>
+      <p>Este sitio necesita JavaScript para funcionar correctamente.</p>
+      <p>Por favor, activa JavaScript en tu navegador e intenta de nuevo.</p>
     </div>
+  </noscript>
+  
+  <div id="root"></div>
+  
+  <!-- Fallback loader -->
+  <div class="initial-loader">
+    <div class="spinner"></div>
   </div>
 </body>
 </html>

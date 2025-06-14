@@ -1,15 +1,29 @@
-// src/styles/GlobalStyles.js - UX 2025 Refactor
+// src/styles/GlobalStyles.js - Solo fuentes locales
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
-  /* Importar fuentes modernas */
-  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap');
-  
-  /* Importar fuente local como fallback */
+  /* Cargar fuentes locales */
   @font-face {
     font-family: 'Courier';
     src: url('/assets/fonts/Courier-Regular.ttf') format('truetype');
     font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  /* Font Awesome icons */
+  @font-face {
+    font-family: 'Font Awesome 6 Free';
+    src: url('/assets/fonts/fa-solid-900.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: 'Font Awesome 6 Brands';
+    src: url('/assets/fonts/fa-brands-400.woff2') format('woff2');
+    font-weight: 400;
     font-style: normal;
     font-display: swap;
   }
@@ -45,9 +59,9 @@ const GlobalStyles = createGlobalStyle`
     --blur-sm: blur(8px);
     --blur-md: blur(16px);
     
-    /* Typography Scale */
-    --font-primary: 'Inter', 'IBM Plex Mono', 'Courier', system-ui, sans-serif;
-    --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+    /* Typography Scale - USANDO COURIER COMO FUENTE PRINCIPAL */
+    --font-primary: 'Courier', 'Courier New', monospace, ui-monospace, SFMono-Regular, 'SF Mono', Consolas, 'Liberation Mono', Menlo;
+    --font-mono: 'Courier', 'Courier New', monospace, ui-monospace, SFMono-Regular, 'SF Mono', Consolas, 'Liberation Mono', Menlo;
     
     /* Fluid Typography */
     --text-xs: clamp(0.75rem, 0.8vw, 0.875rem);
@@ -74,6 +88,7 @@ const GlobalStyles = createGlobalStyle`
     --radius-md: 12px;
     --radius-lg: 16px;
     --radius-xl: 24px;
+    --radius-full: 9999px;
     
     /* Focus Ring */
     --focus-ring: 0 0 0 2px var(--brand);
@@ -111,7 +126,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    font-family: var(--font-primary);
+    font-family: var(--font-primary) !important;
     font-size: var(--text-base);
     line-height: 1.6;
     color: var(--text-hi);
@@ -120,10 +135,13 @@ const GlobalStyles = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
     transition: background-color 0.3s ease, color 0.3s ease;
+    visibility: visible;
+    opacity: 1;
   }
 
-  /* Typography */
+  /* Typography - FORZAR USO DE COURIER */
   h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-primary) !important;
     font-weight: 700;
     line-height: 1.2;
     color: var(--text-hi);
@@ -138,6 +156,7 @@ const GlobalStyles = createGlobalStyle`
   h6 { font-size: var(--text-sm); }
 
   p {
+    font-family: var(--font-primary) !important;
     color: var(--text-mid);
     line-height: 1.7;
     margin-bottom: var(--space-md);
@@ -145,6 +164,7 @@ const GlobalStyles = createGlobalStyle`
 
   /* Links */
   a {
+    font-family: var(--font-primary) !important;
     color: var(--brand);
     text-decoration: none;
     transition: all 0.2s ease;
@@ -167,7 +187,7 @@ const GlobalStyles = createGlobalStyle`
 
   /* Form Elements */
   input, textarea, select {
-    font-family: inherit;
+    font-family: var(--font-primary) !important;
     font-size: var(--text-base);
     color: var(--text-hi);
     background-color: var(--surface-0);
@@ -186,7 +206,7 @@ const GlobalStyles = createGlobalStyle`
 
   /* Buttons */
   button {
-    font-family: inherit;
+    font-family: var(--font-primary) !important;
     font-size: var(--text-base);
     font-weight: 500;
     cursor: pointer;
@@ -228,6 +248,11 @@ const GlobalStyles = createGlobalStyle`
       background-color: var(--surface-2);
       border-color: var(--brand);
     }
+  }
+
+  /* Forzar fuente en todos los elementos */
+  * {
+    font-family: var(--font-primary) !important;
   }
 
   /* Images & Media */

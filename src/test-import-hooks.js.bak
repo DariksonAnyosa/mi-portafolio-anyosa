@@ -1,0 +1,6 @@
+// src/test-import.js - Archivo de prueba para verificar importaciones
+import { useFontLoader, useLocalStorage } from './hooks';
+
+console.log('Imports working:', { useFontLoader, useLocalStorage });
+
+export default null;

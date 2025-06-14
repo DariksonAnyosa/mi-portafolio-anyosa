@@ -15,7 +15,7 @@ export const skills = [
     id: 2,
     name: 'CSS3',
     icon: FaCss3Alt,
-    level: 85,
+    level: 50,
     color: '#1572B6',
     category: 'frontend'
   },
@@ -31,7 +31,7 @@ export const skills = [
     id: 4,
     name: 'React',
     icon: FaReact,
-    level: 75,
+    level: 50,
     color: '#61DAFB',
     category: 'frontend'
   },
@@ -39,7 +39,7 @@ export const skills = [
     id: 5,
     name: 'TypeScript',
     icon: SiTypescript,
-    level: 65,
+    level: 50,
     color: '#3178C6',
     category: 'frontend'
   },
@@ -51,38 +51,6 @@ export const skills = [
     color: '#339933',
     category: 'backend'
   },
-  {
-    id: 7,
-    name: 'MongoDB',
-    icon: SiMongodb,
-    level: 55,
-    color: '#47A248',
-    category: 'backend'
-  },
-  {
-    id: 8,
-    name: 'Firebase',
-    icon: SiFirebase,
-    level: 65,
-    color: '#FFCA28',
-    category: 'backend'
-  },
-  {
-    id: 9,
-    name: 'Figma',
-    icon: FaFigma,
-    level: 70,
-    color: '#F24E1E',
-    category: 'design'
-  },
-  {
-    id: 10,
-    name: 'Adobe XD',
-    icon: SiAdobexd,
-    level: 60,
-    color: '#FF61F6',
-    category: 'design'
-  }
 ];
 
 export default skills;
